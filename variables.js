@@ -25,4 +25,4 @@ function pessoa() {
 
 console.log("Meu nome é " + nome + " e eu tenho " + idade + " anos.");
 
-pessoa();
+pessoa(); 
