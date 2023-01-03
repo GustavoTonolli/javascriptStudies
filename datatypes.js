@@ -6,7 +6,7 @@
 string = "Gustavo";
 number = 15;
 boolean = true or false;
-null = empty;
+null = empty absence of value;
 undefined = a variable without a value, has the value undefined. The type is also undefined.
 
 and we still have object, symbols and BigInt;
