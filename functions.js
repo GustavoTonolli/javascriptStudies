@@ -23,3 +23,17 @@ function other() {
 let num = other()
 console.log(num)
 
+// function with parameters
+
+function sum(p1, p2) {
+    console.log(p1 + p2);
+}
+
+sum(10, 5);
+const DEFAULT_VALUE = 0
+function sum1(p1 = DEFAULT_VALUE, p2 = DEFAULT_VALUE) { // parameter with default value
+    return p1 + p2;
+}
+
+let res1 = sum1(10, 20);
+console.log(res1)
