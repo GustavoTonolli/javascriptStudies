@@ -1,6 +1,7 @@
 // Arithmetic operators
 // brackets types
-// {} = angle brackets;
+// <> = angle brackets
+// {} = curly brackets;
 // [] = square brackets;
 // () = round brackets or parentheses;
 // operators
