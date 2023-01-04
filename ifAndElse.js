@@ -18,7 +18,7 @@ console.log("Fim do Programa"); */
 /* if (num > 10) {
     console.log("Numero maior que 10.");
     if (num > 50) {
-        console.log("Numero maior que 50")
+        console.log("Numero maior que 50");
     }
 } else if (num > 5) {
     console.log("Numero esta entre 6 e 10.");
