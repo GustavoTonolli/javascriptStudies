@@ -20,7 +20,7 @@
     color: #ccc;
 }
 .destaque {
-    background-color: #444 !important;
+    background-color: rgb(89, 0, 0) !important;
     color: #ccc !important;
     border-color: #f00 !important;
 }
