@@ -1,3 +1,5 @@
+// get elements by class name examples, very useful with css
+
 const allCourses = [...document.getElementsByClassName("curso")];
 const c1Courses = [...document.getElementsByClassName("c1")];
 const c2Courses = [...document.getElementsByClassName("c2")];
