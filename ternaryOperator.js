@@ -3,6 +3,6 @@
 
 let num1 = 14;
 
-res = (!(num1 % 2) ? "Even!" : "Odd!" );
+res = (!(num1 % 2) ? "Even!" : "Odd!");
 
 console.log(res)
