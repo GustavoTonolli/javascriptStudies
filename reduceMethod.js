@@ -1,4 +1,7 @@
 // permite fazer reducao do array
+// metodo reduce e um callback function, vai trabalhar com os elementos do array;
+// parametros previous value, current value, current index, array;
+// nos permite operar todos os elementos de um array, soma elemento anterior com o atual por exemplo.
 
 
 const p_array = document.querySelector("#array")
