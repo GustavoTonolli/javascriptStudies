@@ -27,7 +27,7 @@ class Carro {
 let c1 = new Carro("ford", 1) // new instancia uma nova classe e inicia o construtor
 let c2 = new Carro("Gol", 2)
 let c3 = new Carro("Fiorino", 3)
-c1.setNome("Bmw")
+c1.setNome("BMW")
 c1.info()
 
 // criar propriedades key values
