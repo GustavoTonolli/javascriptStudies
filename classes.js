@@ -25,7 +25,7 @@ class Pessoa {
 
 }
 
-p1 = new Pessoa(26, "Gustavo Tonolli")
+let p1 = new Pessoa(26, "Gustavo Tonolli")
 
 p1.info()
 
@@ -33,3 +33,29 @@ console.log(p1.getIdade())
 
 // como substituir a class por function para entender como funciona.
 
+function Pessoa2(idade, nome) { // nao temos o construtor, construtor e o parametro
+    this.idade = idade,
+        this.nome = nome,
+
+        this.setNome = function (nome) {
+            this.nome = nome;
+        },
+        this.setIdade = function (idade) {
+            this.idade = idade;
+        },
+        this.getNome = function (nome) {
+            return this.nome
+        },
+        this.getIdade = function (idade) {
+            return this.idade
+        },
+        this.info = () => {
+            console.log(`Nome: ${this.nome}`)
+            console.log(`Idade: ${this.idade}`)
+        }
+
+}
+
+let p2 = new Pessoa2(21, "Tauani Tonolli")
+
+p2.info()
