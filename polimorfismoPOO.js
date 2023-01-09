@@ -44,12 +44,18 @@ class Turbo {
 }
 class CarroEspecial extends Carro {
     constructor(estagioTurbo) {
-        super(4, estagioTurbo)
+        super(4, estagioTurbo) // super precisa ser a primeira linha
+        this.tipoInfo = 0
         this.velMax = 300 + this.turbo.pot
         this.nome = "Carro especial"
     }
     info() { // sobrescreveu o metodo do pai
-        super.info() // PARA CHAMAR O METODO PAI porem posso mudar o methodo e chamar com o mesmo nome
+        if (this.tipoInfo == 0) {
+            super.info()
+        } else {
+            console.log(this.nome)
+        }
+        // PARA CHAMAR O METODO PAI porem posso mudar o methodo e chamar com o mesmo nome
     }
 
 }
