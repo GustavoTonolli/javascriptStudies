@@ -5,6 +5,7 @@ const display = document.querySelector(".display")
 const tcopy = document.getElementById("tcopy")
 const tlimpar = document.getElementById("tlimpar")
 const tigual = document.getElementById("tigual")
+const teste = document.getElementById("teste")
 
 
 let sinal = false
@@ -55,7 +56,10 @@ tlimpar.addEventListener("click", (evt) => {
     display.innerHTML = 0
 })
 tcopy.addEventListener("click", (evt) => {
-
+    navigator.clipboard.writeText(display.innerHTML)
+    /*   teste.select() // mobileS
+      teste.setSelectionRange(0, 99999) // mobile
+      navigator.clipboard.writeText(teste.value)  copiar de input text  */         // copiar writeText colar readText or read
 })
 tigual.addEventListener("click", (evt) => {
     sinal = false
