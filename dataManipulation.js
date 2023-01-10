@@ -27,4 +27,13 @@ console.log(data_r)
 console.log(`Month : ${data.getMonth() + 1}`)
 
 // Criando um Relogio 
+const relogio = () => {
+    const data = new Date()
+    let hora = data.getHours()
+    hora = hora < 10 ? "0" + hora : hora // tratamento do 0
+    let minuto = data.getMinutes()
+    let segundo = data.getSeconds()
+    const hora_completa = `${hora}:${minuto}:${segundo}`
 
+}
+const intervalo = setInterval(relogio(), 1000) // setInterval e uma funcao que chama outra funcao a cada intervalo de tempo nesse caso 1 segundo
