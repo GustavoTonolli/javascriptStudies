@@ -3,8 +3,24 @@
 // dois metodos iguais com funcionalidades diferentes
 // posso ter varios construtores com propriedades diferentes
 
-class Carro {
+// abstract nao pode ser instanciada
+class CarroPadrao { // clase abstrata, classe so para base.. nao quero criar objetos dessa classe
+    constructor() {
+        if (this.constructor === CarroPadrao) {
+            throw new TypeError("Esta classe nao Pode ser Instanciada")
+        }
+        if (this.ligar === undefined) { // obrigando a implementar metodo
+            throw new TypeError("Necessario implementar o metodo ligar")
+        }
+        this.rodas = 4
+        this.portas = 4
+        this.ligado = false
+    }
+
+}
+class Carro extends CarroPadrao {
     constructor(tipo, estagioTurbo) {
+        super()
         this.turbo = new Turbo(estagioTurbo)
         if (tipo == 1) {
             this.velMax = 120
@@ -22,7 +38,13 @@ class Carro {
         console.log(this.nome)
         console.log(this.velMax)
         console.log(this.turbo)
+        console.log(this.rodas)
+        console.log(this.portas)
+        console.log(this.ligado)
         console.log("-------------")
+    }
+    ligar() {
+        this.ligado = true
     }
 }
 
@@ -65,3 +87,4 @@ const c3 = new CarroEspecial(3)
 c1.info()
 c2.info()
 c3.info()
+// const c9 = new CarroPadrao()
