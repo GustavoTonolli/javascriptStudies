@@ -6,7 +6,12 @@ const tcopy = document.getElementById("tcopy")
 const tlimpar = document.getElementById("tlimpar")
 const tigual = document.getElementById("tigual")
 const teste = document.getElementById("teste")
+const calc_aba = document.getElementById("calc_aba")
+const calc = document.getElementById("calc")
 
+calc_aba.addEventListener("click", () => {
+    calc.classList.toggle("calc_exibir")
+})
 
 let sinal = false
 let decimal = false
@@ -28,9 +33,7 @@ teclasNum.forEach((el) => {
                 display.innerHTML = ""
             }
             display.innerHTML += evt.target.innerHTML
-        }
-
-
+        };
     });
 });
 teclasOp.forEach((el) => {
@@ -54,16 +57,16 @@ tlimpar.addEventListener("click", (evt) => {
     sinal = false
     decimal = false
     display.innerHTML = 0
-})
+});
 tcopy.addEventListener("click", (evt) => {
     navigator.clipboard.writeText(display.innerHTML)
     /*   teste.select() // mobileS
       teste.setSelectionRange(0, 99999) // mobile
       navigator.clipboard.writeText(teste.value)  copiar de input text  */         // copiar writeText colar readText or read
-})
+});
 tigual.addEventListener("click", (evt) => {
     sinal = false
     decimal = false
     const res = eval(display.innerHTML)
     display.innerHTML = res
-})
+});

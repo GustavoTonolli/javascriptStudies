@@ -10,13 +10,27 @@
     justify-content: center;
     align-items: center;
 }
-.calc {
+
+.calc_principal {
     flex-direction: column;
     background-color: #eee;
     border: 3px solid #bbb;
-    width: 240px;
+    width: 250px;
     border-radius: 5px;
     
+}
+.calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    left: -250px;
+    transition: all 0.6s;
+}
+.calc_exibir {
+    transition: all 0.6s;
+    left:0px !important;
 }
 .div_nome {
     width: 220px;
@@ -25,6 +39,8 @@
     border: 2px solid blue;
     width: 220px;
     border-radius: 1px;
+    margin: 10px !important;
+    
 }
 #display{
     width: 220px;
@@ -55,4 +71,15 @@
 .teclaOp {
     background-color: #f44 !important;
     border-color: #800 !important;
+}
+.calc_aba {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 50px;
+    background-color: rgba(128,128,128,0.2);
+    border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+
 }
