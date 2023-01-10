@@ -1,0 +1,58 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+    font-size: large;
+}
+.dflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calc {
+    flex-direction: column;
+    background-color: #eee;
+    border: 3px solid #bbb;
+    width: 240px;
+    border-radius: 5px;
+    
+}
+.div_nome {
+    width: 220px;
+}
+.div_display {
+    border: 2px solid blue;
+    width: 220px;
+    border-radius: 1px;
+}
+#display{
+    width: 220px;
+    background-color: lightblue;
+    text-align: right;
+    padding: 5px;
+    font-family: monospace;
+    font-size: larger;
+}
+.div_teclas {
+    width: 240px;
+    flex-wrap: wrap;
+    
+}
+.tecla {
+    background-color: #aaa;
+    border: 3px solid #888;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+}
+.tecla:hover {
+    background-color: red !important;
+}
+.teclaOp {
+    background-color: #f44 !important;
+    border-color: #800 !important;
+}
