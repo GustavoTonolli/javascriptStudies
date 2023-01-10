@@ -6,32 +6,40 @@
 // isso seria o conceito assincrono
 
 const numero = document.getElementById("numero");
+const btn_promessa = document.getElementById("btn_promessa")
 
+btn_promessa.addEventListener("click", (evt) => {
+    numero.innerHTML = "Processando..."
+    promessa()
 
-let promise = new Promise((res, rej) => {
-    let resultado = true;
-    let tempo = 3000;
-    setTimeout(() => {
-        if (resultado) {
-            res("Deu tudo certo")
-        } else {
-            rej("Deu tudo errado")
-        }
-    }, tempo)
-});
-promise.then((r) => {
-    numero.innerHTML = r
-    numero.classList.remove("erro")
-    numero.classList.add("ok")
-})
-promise.catch((r) => {
-    numero.innerHTML = r
-    numero.classList.add("erro")
-    numero.classList.remove("ok")
 })
 
+const promessa = () => { // colocando promisse dentro de uma funcao para reutilizar
+    let promise = new Promise((res, rej) => {
+        let resultado = true;
+        let tempo = 3000;
+        setTimeout(() => {
+            if (resultado) {
+                res("Deu tudo certo")
+            } else {
+                rej("Deu tudo errado")
+            }
+        }, tempo)
+    });
+    promise.then((r) => {
+        numero.innerHTML = r
+        numero.classList.remove("erro")
+        numero.classList.add("ok")
+    })
+    promise.catch((r) => {
+        numero.innerHTML = r
+        numero.classList.add("erro")
+        numero.classList.remove("ok")
+    })
+}
 
-numero.innerHTML = "Processando..."
+
+numero.innerHTML = "Esperando..."
 
 /* setTimeout(() => {
     resultado = true
