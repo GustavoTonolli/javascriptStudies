@@ -37,3 +37,20 @@ const relogio = () => {
 
 }
 const intervalo = setInterval(relogio(), 1000) // setInterval e uma funcao que chama outra funcao a cada intervalo de tempo nesse caso 1 segundo
+// timer com alarme
+
+let som_alarme = new Audio("alarme.mp3")
+
+som_alarme.loop = -1 // tocar infinito, loop continuo
+som_alarme.play() // tocar
+let timestampAtual = null
+let timestampAlarme = null
+let alarme_ativado = false
+let alarme_tocando = false
+
+btn_ativar.addEventListener("click", () => {
+    timestampAtual = Date.now()
+    timestampAlarme = timestampAtual + ("valor.value" * 1000)
+    alarme_ativado = true
+    const dtAlarme = new Date(timestampAlarme)
+})
