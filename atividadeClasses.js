@@ -11,7 +11,7 @@ let numBola = 0;
 
 class Bola {
     constructor(arrayBolas, palco) {
-        this.tam = Math.floor(Math.random() * 10); + 10 // gera tamanho aleatorio para a bolinha
+        this.tam = Math.floor(Math.random() * 10) + 10; // gera tamanho aleatorio para a bolinha
         this.r = Math.floor(Math.random() * 255); // gera cor aleatoria rgb
         this.g = Math.floor(Math.random() * 255);// gera cor aleatoria rgb
         this.b = Math.floor(Math.random() * 255); // gera cor aleatoria rgb
@@ -47,11 +47,29 @@ class Bola {
         const div = document.createElement('div');
         div.setAttribute('id', this.id);
         div.setAttribute('class', 'bola');
-        div.setAttribute("style", `left : ${this.px};top:${this.py};width:${this.tam};height:${this.tam};background-color:rgb(${this.r},${this.g},${this.b})`);
+        div.setAttribute("style", `left : ${this.px}px;top:${this.py}px;width:${this.tam}px;height:${this.tam}px;background-color:rgb(${this.r},${this.g},${this.b})`);
         this.palco.appendChild(div);
     }
+    controle_bordas = () => {
+        if (this.px + this.tam >= larguraPalco) {
+            this.dirx = -1
+        } else if (this.px <= 0) {
+            this.dirx = 1
+        }
+        if (this.py + this.tam >= alturaPalco) {
+            this.diry = -1
+        } else if (this.py <= 0) {
+            this.diry = 1
+        }
+    }
     controlar = () => {
-
+        this.controle_bordas()
+        this.px += this.dirx * this.velx;
+        this.py += this.diry * this.vely;
+        this.eu.setAttribute("style", `left : ${this.px}px;top:${this.py}px;width:${this.tam}px;height:${this.tam}px;background-color:rgb(${this.r},${this.g},${this.b})`);
+        if ((this.px > larguraPalco) || (this.py > alturaPalco)) {
+            this.remover()
+        }
     }
 }
 window.addEventListener("resize", (evt) => { // evento dimensionamento da tela ou palc0
@@ -61,11 +79,13 @@ window.addEventListener("resize", (evt) => { // evento dimensionamento da tela o
 btn_add.addEventListener("click", (evt) => { // Instanciar novas bolinhas
     const qtde = txt_qtde.value
     for (let i = 0; i < qtde; i++) {
-
+        bolas.push(new Bola(bolas, palco))
     }
 })
-btn_add.addEventListener("click", (evt) => { // Remover bolinhas
+btn_remover.addEventListener("click", (evt) => { // Remover bolinhas
+    txt_qtde.value = 0
     bolas.map((b) => {
-
+        b.remover();
     })
+
 })
