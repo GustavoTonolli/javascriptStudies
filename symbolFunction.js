@@ -10,19 +10,27 @@ const obj4 = Symbol.for("Gustavo") // posso ter 2 simbolos com o mesmo identific
 console.log(obj1);
 console.log(Symbol.keyFor(obj4)); */
 
-class Jogador {
-    constructor(nome) {
-        this.nome = nome;
-        this.id = Symbol()
-    }
+// class Jogador {
+//     constructor(nome) {
+//         this.nome = nome;
+//         this.id = Symbol()
+//     }
+// }
+
+// let jogadores = [new Jogador("j1"), new Jogador("j2"), new Jogador("j3"), new Jogador("j4"), new Jogador("j5")];
+// let s1 = jogadores[0].id;
+
+// jogadores = jogadores.filter((j) => {
+//     return j.id !== s1;
+// })
+
+// console.log(jogadores)
+// console.log(s1)
+
+const nome = Symbol()
+
+const Jogador = {
+    [nome]: "Joao", // propriedade fica oculta, nao fica tao exposta. metodo for in nao consegue encontrala // hide properties, propriedades escondidas ou ocultas
 }
 
-let jogadores = [new Jogador("j1"), new Jogador("j2"), new Jogador("j3"), new Jogador("j4"), new Jogador("j5")];
-let s1 = jogadores[0].id;
-
-jogadores = jogadores.filter((j) => {
-    return j.id !== s1;
-})
-
-console.log(jogadores)
-console.log(s1)
+console.log(Jogador)
