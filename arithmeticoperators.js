@@ -14,19 +14,18 @@
 ** exponent
 ++ Or += increment
 
-*/ 
+*/
 // simple sum operation +
 
-let num1 = 5, num2 = 10; 
+let num1 = 5, num2 = 10;
 
 res = num1 + num2;
 
-console.log(res);
 
 // simple division operator
 
 res1 = num1 / num2;
-res1 = (num1 / num2)/2; // it will do first what's inside parentheses, math rules.
+res1 = (num1 / num2) / 2; // it will do first what's inside parentheses, math rules.
 
 // mod operator
 
@@ -49,7 +48,7 @@ res3 = num1 - num2;
 
 // simple times operator, multiplication
 
-res4 = (num1 + num2)*2; // it will do first what's inside parentheses, math rules.
+res4 = (num1 + num2) * 2; // it will do first what's inside parentheses, math rules.
 
 // brackets types
 // {} = angle brackets;
@@ -58,8 +57,9 @@ res4 = (num1 + num2)*2; // it will do first what's inside parentheses, math rule
 
 // exponent operation
 
-res4 = (num1 + num2)**2;
+res4 = (num1 + num2) ** 2;
 
 
 
 
+console.log((Math.pow(5, 2)) - (Math.pow(-5, 2)))
